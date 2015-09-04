@@ -1,0 +1,37 @@
+
+div.row {
+	margin-bottom:15px;
+}
+
+label {
+	display:block;
+	font-weight:bold;	
+	margin-bottom:5px;	
+}
+
+select {
+	width:300px;		
+	padding:3px 5px;	
+}
+
+table {
+	width: 1000px; 
+	margin: 0 auto; 
+	min-height: 500px; 
+}
+
+td, tr {
+	border: 1px solid #cecece; 
+	vertical-align: top;
+}
+
+a { 
+	padding: 10px;
+}
+
+.element_menu{
+	display:none;
+}
+
+li{
+	cursor:pointer;
