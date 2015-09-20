@@ -6,6 +6,7 @@ public $title;
 public $description;
 public $keywords;
 public static $db;
+public static $id;
 public $module;
 public $menu;
 public $cookie;
@@ -29,6 +30,7 @@ public $cookie;
         catch(PDOException $e) {
             file_put_contents('LogsErrors.txt', $e -> getMessage(), FILE_APPEND);
         }
+        /** @var App $DBH */
         return $DBH;
     }
 
@@ -158,7 +160,9 @@ $app -> makePage();
             </ul>
                 <div class="search_block">
                     <form action="" method="post">
-                        <input type="text" name="text" value="">
+                        <label>
+                            <input type="text" name="text" value="">
+                        </label>
                         <input type="submit" value="Поиск" name="search">
                         <div class="drop_search d_n_" id="suggestions">
                             </div>

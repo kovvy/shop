@@ -67,11 +67,13 @@ class Basket extends Module {
         }else{
             parent::template('no_basket');
         }
+        /** @var Basket $product */
         return $product;
     }
 
     public function view_priceProduct($arr){
         for($i = 0; $i < count($arr);$i++) {
+            $grn = 0;
             $grn += $arr[$i]['price_g'];
         }
         echo $grn;

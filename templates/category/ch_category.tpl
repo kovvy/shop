@@ -2,29 +2,26 @@
 <script type="text/javascript" src="/js/jquery.ui-slider.js"></script>
 
 
-
     <div class="container_s">
-
         <div class="inside">
             <div class="container_sm-st">
                 <div class="catalog_content">
                     <div class="f_l">
-                        <div class="block_d-i">
-                            <input class="helper">
+                        <div id="fon"></div>
+                        <div id="load"></div>
+                        <div class="block_d-i" id="<?=$app -> module -> id?>">
                             <h1><?=$app -> module -> category?></h1>
                         </div>
 
-                        <form name="sort" method="POST" action="">
                             <div class="f_l f-s_12em sort">
                                 <input class="helper">
                                 <span>Сортировать:</span>
                                 <span class="pointer"><span class="d_l_r">По цене</span><span class="icon arrow_red"></span></span>
                                     <span class="drop sort_current">
-                                        <span><input type="submit" value="Сначала дешевые" name="order_price"></span>
-                                        <span><input type="submit" value="Сначала дорогие" name="order_price"></span>
+                                        <span id="pricea">Сначала дешевые</span>
+                                        <span id="priced">Сначала дорогие</span>
                                     </span>
                             </div>
-                        </form>
 
                         <form name="product" method="POST" action="">
                             <ul class="items items_middle">
@@ -37,10 +34,31 @@
                                                         <div class="f_l">
                                                             <div class="price-f-s_24 clearfix">
                                                                 <span class="grn">' .$product['price_g']. ' грн.</span><br>
+                                                                    <span class="dol">
+                                                                        <span class="val_sum ">' .$product['price_g']. '</span>
+                                                                        <span class="pointer"><span class="d_l_r">$</span><span class="icon arrow_red"></span></span>
+                                                                        <span class="drop">
+                                                                            <span class="USD">$</span>
+                                                                            <span class="RUR">руб</span>
+                                                                            <span class="EUR">€</span>
+                                                                        </span>
+                                                                </span>
                                                             </div>
                                                             ' .$app -> module -> get_status($product['status']). '
-                                                            <button class="but_buy_m f_l goBuy" type="submit" name="button" value="' .$product['id']. '"><span>В корзину</span></button>
+
+                                                            <button class="but_buy_m f_l goBuy" type="submit" name="button" value="' .$product['id']. '">
+                                                                <span>В корзину</span>
+                                                            </button>
+
+                                                            <button class="but_order_b f_l goCart d_n_">
+                                                                <span>
+                                                                  <span>Оформить заказ</span>
+                                                                  <span>товар уже в корзине</span>
+                                                                </span>
+                                                            </button>
                                                         </div>
+                                                        <p>
+                                                        </p>
                                                     </div>
 
                                                     <a href="?module=Product/' .$product['id']. '" class="photo_block f_l">
@@ -49,7 +67,7 @@
                                                         </figure>
                                                     </a>
                                                 </li>
-                                        ';
+                                            ';
                                     }
                                 ?>
                             </ul>

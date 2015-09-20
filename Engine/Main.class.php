@@ -56,6 +56,7 @@ class Main extends Module{
         while($brand = $result->fetch()) {
             $brands[] = $brand;
         }
+        /** @var Main $brands */
         return $brands;
     }
 

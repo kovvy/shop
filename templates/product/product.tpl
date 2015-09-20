@@ -2,6 +2,7 @@
         <?php
         foreach($app -> module -> product as $prod) {
         print_r($_POST);
+        echo App::$id;
         echo '<div class="inside">
             <div class="tovar_frame items clearfix">
                 <div class="description f_r" itemscope="" itemtype="http://schema.org/Product">

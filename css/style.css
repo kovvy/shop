@@ -461,9 +461,6 @@ del + *, del + *{margin-top: 0 !important;}
 .prev:hover{background-position: -173px 0;}
 .next:hover{background-position: -188px 0;}
 .carusel ul{white-space: nowrap;}
-.brands .carusel{width: 885px !important;margin: 0 auto;overflow: hidden;}
-.brands .carusel li{width: 170px !important;height: auto !important;overflow: visible !important;float: none !important;display: inline-block !important;vertical-align: middle;text-align: center;}
-.brands .carusel li img{width:125px;}
 
 .catalog{text-align: center;padding-bottom: 15px;margin-bottom: 35px;overflow: hidden;background: #474747;background: -webkit-gradient(linear, 0 0, 0 bottom, from(#474747), to(#2c2c2c));background: -webkit-linear-gradient(#474747, #2c2c2c);background: -moz-linear-gradient(#474747, #2c2c2c);background: -ms-linear-gradient(#474747, #2c2c2c);background: -o-linear-gradient(#474747, #2c2c2c);background: linear-gradient(#474747, #2c2c2c);-pie-background: linear-gradient(#474747, #2c2c2c);}
 .catalog > li{width: 33%;float: left;padding-top: 20px;}
@@ -1004,31 +1001,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
  position: relative; /* позиционируем блок относительно основной области карусели */
 }
 .carousel-block {
- float: left; /* выстраиваем все элементы карусели в ряд */
- width: 150px; /* задаём ширину каждого элемента */
- padding: 10px 10px 10px 0px; /* делаем оступы, чтобы элементы не сливались */
- position: center;
+ width: 170px !important;
+ height: auto !important;
+ overflow: visible !important;
+ float: none !important;
+ display: inline-block !important;
+ vertical-align: middle;
+ text-align: center;
 }
 .carousel-block img{
- display:block;
-}
 
-/*********** BUTTONS ***********/
-.carousel-button-left a, .carousel-button-right a{
- width: 25px;
- height: 36px;
- position: relative;
- top: 18px;
- cursor: pointer;
- text-decoration:none;
-}
-.carousel-button-left a{
- float: left;
- background: url(../images/slider/carousel/carousel-left.png);
-}
-.carousel-button-right a{
- float: right;
- background: url(../images/slider/carousel/carousel-right.png);
+ width:125px;
 }
 
 
@@ -1101,7 +1084,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
  text-decoration: none;
  height: 61px;
  width: 38px;
- background: transparent url("/images/slider/main/default/themes.gif") no-repeat left top;
+ background: transparent url("/images/slider/baner_slider/default/themes.gif") no-repeat left top;
  margin-top: -45px;
 }
 
@@ -1114,3 +1097,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
  background-position: right top;
  right: 0;
 }
+
+#fon {
+ display:none;
+ opacity:0.8;
+ position:absolute;
+ width:700px;
+ height:100%;
+ z-index:100;
+ background-color:white
+}
+
+#load {
+ position:fixed;
+ left:40%;
+ top:50%;
+ width:65px;
+ height:65px;
+ z-index:150;
+ display:none;
+}
+

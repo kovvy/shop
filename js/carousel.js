@@ -1,11 +1,11 @@
 //Обработка клика на стрелку вправо
-$(document).on('click', ".carousel-button-right",function(){ 
+$(document).on('click', ".next",function(){
 	var carusel = $(this).parents('.carousel');
 	right_carusel(carusel);
 	return false;
 });
 //Обработка клика на стрелку влево
-$(document).on('click',".carousel-button-left",function(){ 
+$(document).on('click',".prev",function(){
 	var carusel = $(this).parents('.carousel');
 	left_carusel(carusel);
 	return false;

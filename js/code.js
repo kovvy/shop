@@ -160,6 +160,24 @@ $(document).ready(function(){
         })
     }
 
+    $(".sort_current span").click(function () {
+        var id = $(this).attr('id');
+        var name = $(".block_d-i").attr("id");
+        $("#fon").css({'display':'block'});
+        $("#load").fadeIn(1000,function () {
+            $.ajax({
+                url:'Engine/Handler.php',
+                data:'sort_id='+id + '/' +name,
+                type:'get',
+                success:function (html) {
+                    $(".items_middle").html(html).hide().fadeIn(2000);
+                    $("#fon").css({'display':'none'});
+                    $("#load").fadeOut(1000);
+                }
+
+            });
+        });
+    });
 });
 
 

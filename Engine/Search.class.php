@@ -41,6 +41,7 @@ class Search extends Module{
         while($category = $result->fetch()) {
             $product[] = $category;
         }
+        /** @var Search $product */
         return $product;
     }
 
@@ -54,6 +55,7 @@ class Search extends Module{
             case 'Наличие уточняйте':
                 $a = '<div class="product_status_1">' .$status. '</div>'; break;
         }
+        /** @var Search $a */
         return $a;
     }
 

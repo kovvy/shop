@@ -11,56 +11,60 @@
                 namespace: "callbacks"
             });
         });
+
     </script>
+
     <div class="margin_l_r-1">
+
     <section class="baner slider">
+
         <div class="callbacks_container">
             <ul class="rslides" id="slider4">
                 <li>
                     <a href="">
-                        <img src="/images/slider/main/Termostats_img.jpg">
+                        <img src="/images/slider/baner_slider/Termostats_img.jpg">
                     </a>
                     <p class="caption">This is a caption</p>
                 </li>
                 <li>
                     <a href="">
-                        <img src="/images/slider/main/3-xxodovoy.jpg">
+                        <img src="/images/slider/baner_slider/3-xxodovoy.jpg">
                     </a>
                     <p class="caption">This is a caption</p>
                 </li>
                 <li>
                     <a href="">
-                        <img src="/images/slider/main/Reflex_Storatherm___ARTHERMO.jpg">
+                        <img src="/images/slider/baner_slider/Reflex_Storatherm___ARTHERMO.jpg">
                     </a>
                     <p class="caption">This is a caption</p>
                 </li>
                 <li>
                     <a href="">
-                        <img src="/images/slider/main/oventrop.jpg">
+                        <img src="/images/slider/baner_slider/oventrop.jpg">
                     </a>
                     <p class="caption">This is a caption</p>
                 </li>
                 <li>
                     <a href="">
-                        <img src="/images/slider/main/IBP_center.jpg">
+                        <img src="/images/slider/baner_slider/IBP_center.jpg">
                     </a>
                     <p class="caption">This is a caption</p>
                 </li>
                 <li>
                     <a href="">
-                        <img src="/images/slider/main/general_fittings.jpg">
+                        <img src="/images/slider/baner_slider/general_fittings.jpg">
                     </a>
                     <p class="caption">This is a caption</p>
                 </li>
                 <li>
                     <a href="">
-                        <img src="/images/slider/main/banner22.JPG">
+                        <img src="/images/slider/baner_slider/banner22.JPG">
                     </a>
                     <p class="caption">This is a caption</p>
                 </li>
                 <li>
                     <a href="">
-                        <img src="/images/slider/main/Kermi_Therm_x2_Line_web.jpg">
+                        <img src="/images/slider/baner_slider/Kermi_Therm_x2_Line_web.jpg">
                     </a>
                     <p class="caption">This is a caption</p>
                 </li>
@@ -72,23 +76,23 @@
     <section class="brands">
 
         <div class="carousel">
-        <div class="carousel-button-left"><a href="#"></a></div>
-            <div class="carousel-button-right"><a href="#"></a></div>
-            <div class="carousel-wrapper">
-                <div class="carousel-items">
-                    <?php
-                        foreach($app -> module -> brand as $brand){
-                            echo '
-                                    <div class="carousel-block">
-                                        <a href="?module=Brands/' .$brand['id'].'">
-                                            <img src="/images/slider/brands/' . $brand['img'] . '" alt="' . $brand['title'] . '" />
-                                        </a>
-                                    </div>
-                            ';
-                        }
-                    ?>
+            <div class="prev"><a href="#"></a></div>
+            <div class="next"><a href="#"></a></div>
+                <div class="carousel-wrapper">
+                    <div class="carousel-items">
+                        <?php
+                            foreach($app -> module -> brand as $brand){
+                                echo '
+                                        <div class="carousel-block">
+                                            <a href="?module=Brands/' .$brand['id'].'">
+                                                <img src="/images/slider/brands/' . $brand['img'] . '" alt="' . $brand['title'] . '" />
+                                            </a>
+                                        </div>
+                                ';
+                            }
+                        ?>
+                    </div>
                 </div>
-            </div>
         </div>
     </section>
 

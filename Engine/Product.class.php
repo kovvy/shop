@@ -78,6 +78,7 @@ class Product extends Module{
                 $sale[] = $category;
             }
         }
+        /** @var Product $sale */
         return $sale;
     }
 
@@ -90,6 +91,7 @@ class Product extends Module{
             case 'Наличие уточняйте':
                 $a = '<div class="product_status_1">' .$status. '</div>'; break;
         }
+        /** @var Product $a */
         return $a;
     }
 
@@ -115,7 +117,7 @@ class Product extends Module{
             } else {
                 $result = App::$db->query("
                                         INSERT INTO comment (id_product, author, text, datetime)
-                                        VALUES ('$id', '$username', '$text', '$username', '$datetime')
+                                        VALUES ('$id', '$username', '$text', '$datetime')
                                         ");
 
                 $text_mail = "Имя: $username \nПродукт: $id \n\nТекст сообщения:\n$text";

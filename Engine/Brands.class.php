@@ -41,6 +41,7 @@ class Brands extends Module{
             }
             parent::template('brands');
         }
+        /** @var Brands $brands */
         return $brands;
     }
 
@@ -56,6 +57,7 @@ class Brands extends Module{
             }
             parent::template('brands');
         }
+        /** @var Brands $product */
         return $product;
     }
 
