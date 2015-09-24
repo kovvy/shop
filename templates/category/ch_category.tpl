@@ -1,4 +1,3 @@
-<script type="text/javascript" src="/js/imagecms.filter.js"></script>
 <script type="text/javascript" src="/js/jquery.ui-slider.js"></script>
 
 
@@ -121,36 +120,28 @@
                     </div>
 
 
-                    <form name="sortPrice" method="POST" action="">
+                    <div class="block_filter">
+                        <div class="title">Цена</div>
 
-                        <div class="block_filter">
-                            <div class="title">Цена</div>
                             <div class="sliderCont">
-                                <div id="slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
-                                    <a class="ui-slider-handle ui-state-default ui-corner-all" id="left_slider" style="left: 0%;"></a>
-                                    <a class="ui-slider-handle ui-state-default ui-corner-all" id="right_slider" style="left: 50%;"></a>
-                                    <div class="ui-slider-range ui-widget-header" style="left: 0%; width: 80%;"></div></div>
+                                <div id="slider"></div>
                             </div>
-                            <?php
-                            foreach($app -> module -> price as $sort) {
-                            echo '
-                            <div class="formCost">
-                                <label class="f_l">
-                                    от
-                                    <input type="text" id="minCost" value="' .$sort['pricemin']. '" name="pricemin">
-                                </label>
-                                <label class="f_r">
-                                    до
-                                    <input type="text" id="maxCost" value="' .$sort['pricemax']. '" name="pricemax">
-                                </label>
-                                <button type="submit" ><span>Поиск</span></button>
-                            </div>
-                            ';
-                            }
-                            print_r($_POST);
-                            ?>
+                        <div class="formCost">
+                            <? foreach($app -> module -> price as $sort) : ?>
+                            <label class="f_l">
+                                от
+                                <input type="text" id="minCost" value="0" name="pricemin">
+                            </label>
+                            <label class="f_r">
+                                до
+                                <input type="text" id="maxCost" value="<?=$sort['pricemax'];?>" name="pricemax">
+                            </label>
+                            <!--<button name="PriceSort"><span>Поиск</span></button>-->
+                            <? endforeach; ?>
                         </div>
-                    </form>
+                    </div>
+
+
 
 
                     <div class="block_filter filter_ajax_checks">
