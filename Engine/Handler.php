@@ -93,5 +93,6 @@ function get_goods($db, $id_sort, $id){
     }
 
     /** @var $goods $goods */
+
     return $goods;
 }
