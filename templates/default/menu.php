@@ -2,70 +2,65 @@
 
 	function view_cat($arr,$parent_id = 0) {
 
-	    if(empty($arr[$parent_id])) {
-	      return;
-	    }
+		if($parent_id == 0) {
+			for ($i = 0; $i < count($arr[$parent_id]); $i++) {
+				echo '
+				<li>
+					<a href="#" class="btn btn-menu"><i class="ic-list"></i>Каталог товаров <i class="ic-arrow-down-white"></i></a>
+							<ul class="panel-menu arrow" style="display: none;">
+								<li class="close-menu"><a href="#">&larr;</a></li>';
+					view_dcat($arr, $arr[$parent_id][$i]['id']);
+					echo '
+								<li><a href="#">Все бренды <i class="ic-arrow-right"></i></a></li>
+								<li class="divider"></li>
+								<li class="sale"><a href="#"><strong>Распродажа</strong></a></li>
+							</ul>
+	      		</li>
+	      		';
+				break;
+			}
+		}
 
-	    for($i = 0; $i < count($arr[$parent_id]);$i++) {
-	      echo '
-	      		<li><a href="?module=Category/' .$arr[$parent_id][$i]['title'].'"><span class="icon heat_air"></span>'
-	            .$arr[$parent_id][$i]['title'].'</a>';
-	      view_dcat($arr,$arr[$parent_id][$i]['id']);
-	      echo '
-	      		</li>';
-	    }
+		$j = 1;
+		for($i = 0; $i < count($arr[$parent_id]);$i++) {
+			echo '
+				<li>
+					<span class="sp">' .$arr[$parent_id][$i]['title']. ' <i class="ic-arrow-down-white"></i></span>
+							<ul class="panel-menu-' .$j. ' arrow" style="display: none;">
+								<li class="close-menu"><a href="#">&larr;</a></li>';
+									view_dcat($arr,$arr[$parent_id][$i]['id']);
+			echo '
+								<li><a href="#">Все бренды <i class="ic-arrow-right"></i></a></li>
+								<li class="divider"></li>
+								<li class="sale"><a href="#"><strong>Распродажа</strong></a></li>
+							</ul>
+	      		</li>
+	      		';
+			$j++;
+		}
 	}
 
 	function view_dcat($arr,$parent_id = 0) {
 
-	    if(empty($arr[$parent_id])) {
-	      return;
-	    }
-	    echo '
-	    		<div class="drop_menu">
-	            	<div class="f_l">                
-	              		<ul>';
 	    for($i = 0; $i < count($arr[$parent_id]);$i++) {
 	      echo '
-	      					<li><a href="?module=Category/' .$arr[$parent_id][$i]['title'].'" class="title">'
-	            .$arr[$parent_id][$i]['title'].'</a>';
-	      view_pcat($arr,$arr[$parent_id][$i]['id']);
+							<li class="selected">
+                                <a href="?module=Category/' .$arr[$parent_id][$i]['title']. '">' .$arr[$parent_id][$i]['title']. ' <i class="ic-arrow-right"></i></a>
+                                ';
+	      						view_pcat($arr,$arr[$parent_id][$i]['id']);
 	      echo '
-	      					</li>';
+							</li>';
 	    }
-	    echo '
-	    				</ul>';
 	}
 
 	function view_pcat($arr,$parent_id = 0) {
+		if (empty($arr[$parent_id])) return;
 
-	    if(empty($arr[$parent_id])) {
-	      return;
-	    }
-
+		echo '<ul>';
 	    for($i = 0; $i < count($arr[$parent_id]);$i++) {
 	      echo '
-	      						<li><a href="?module=Category/' .$arr[$parent_id][$i]['title'].'">'
-	            .$arr[$parent_id][$i]['title'].'</a>';
-	      view_cat($arr,$arr[$parent_id][$i]['id']);
-	      echo '
-	      						</li>';
+									<li><a href="?module=Category/' .$arr[$parent_id][$i]['title']. '">' .$arr[$parent_id][$i]['title']. ' <i class="ic-arrow-right"></i></a></li>';
 	    }
+		echo '
+				</ul>';
 	}
-
-  	function view_fmenu($arr,$parent_id = 0) {
-
-	    if(empty($arr[$parent_id])) {
-	      return;
-	    }
-
-	    for($i = 0; $i < count($arr[$parent_id]);$i++) {
-	      echo '
-	      							<ul>';
-	      echo '<li class="title"><a href="?module=Category/' .$arr[$parent_id][$i]['title'].'">'
-	            .$arr[$parent_id][$i]['title'].'</a>';
-	      echo '
-	      							</ul>';
-	    }
-	}
-?>
